@@ -1,0 +1,7 @@
+{
+    "/api": {
+    "target": "https://umoja-379917.ey.r.appspot.com",
+    "secure": true,
+    "changeOrigin": true
+    }
+}

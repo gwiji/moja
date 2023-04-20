@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginComponent } from './pages/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'umoja';
+  isShow=false;
+
+  showHideNav(event: any){
+    this.isShow= !(event instanceof LoginComponent);                                        
+  } 
 }
+
+

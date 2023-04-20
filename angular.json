@@ -23,22 +23,30 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/@swimlane/ngx-datatable/index.css",
+              "node_modules/@swimlane/ngx-datatable/themes/material.scss",
+              "node_modules/@swimlane/ngx-datatable/themes/dark.scss",
+              "node_modules/@swimlane/ngx-datatable/themes/bootstrap.scss",
+              "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "10kb"
                 }
               ],
               "fileReplacements": [
@@ -67,7 +75,8 @@
               "browserTarget": "umoja:build:production"
             },
             "development": {
-              "browserTarget": "umoja:build:development"
+              "browserTarget": "umoja:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+a{
+    text-decoration: none!important;
+    color:black!important;
+}
+
+.dropdown-divider{
+    border-top: 1px solid #2e304a!important;
+}
+
+body{
+    background-color: #f2f2f2!important;
+}
+
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row .datatable-body-cell {
+    padding: 0.4rem!important;
+}
+
+.ngx-datatable.bootstrap .datatable-header .datatable-header-cell {
+    font-weight: bold;
+}

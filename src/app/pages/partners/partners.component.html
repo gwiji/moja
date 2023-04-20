@@ -1,0 +1,50 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="page-title-box">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <h4 class="page-title">Partners</h4>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-right">
+                        <li class="breadcrumb-item"><a href="#">Umoja</a></li>
+                        <li class="breadcrumb-item active">Partners</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end page-title -->
+        <!-- START ROW -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        
+                        <div style="display: inline;">
+                            <input type="text" class="form-control col-lg-4 mb-3" style="display: inline;" placeholder="Search..." /> 
+                            <button class="btn float-right btn-secondary"><i class="icon-plus"></i>&nbsp;Add Partner</button>
+                        </div>
+                        <div class="table-responsive">
+                            <ngx-datatable #myTx [rows]="rows" class="bootstrap" [columns]="columns">
+                                <ngx-datatable-column name="Partner Name" prop="name"></ngx-datatable-column>
+                                <ngx-datatable-column name="Email Address" prop="email"></ngx-datatable-column>
+                                <ngx-datatable-column name="Contact Person" prop="contactPerson"></ngx-datatable-column>
+                                <ngx-datatable-column name="Created At" prop="dateCreated"></ngx-datatable-column>
+                                <ngx-datatable-column name="Countries" prop="country"></ngx-datatable-column>
+
+                                <ngx-datatable-column name="Action">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a href="/partner-details">{{row.view}}</a>
+                                    </ng-template>
+                                </ngx-datatable-column>
+                            </ngx-datatable>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END ROW -->
+    </div>
+    <!-- container-fluid -->
+</div>

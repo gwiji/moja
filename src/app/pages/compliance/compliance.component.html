@@ -1,0 +1,76 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="page-title-box">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <h4 class="page-title">Compliance</h4>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-right">
+                        <li class="breadcrumb-item"><a href="#">Umoja</a></li>
+                        <li class="breadcrumb-item active">Compliance</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end page-title -->
+        <!-- START ROW -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        
+                        <div style="display: inline;">
+                            <input type="text" class="form-control col-lg-4 mb-3 float-left" style="display: inline;" placeholder="Search..." /> 
+                            <div class="float-right">
+                            <button class="btn btn-light ml-2"><span><i class="icon-download"></i>&nbsp;Download Template</span></button>&nbsp;&nbsp;&nbsp; <button class="btn float-right btn-secondary" (click)="open(content)"><i class="icon-plus"></i>&nbsp;Add List</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <ngx-datatable #myTx [rows]="rows" class="bootstrap" [columns]="columns"> </ngx-datatable>
+                        </div>
+
+                        <ng-template #content let-c="close" let-d="dismiss">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal-basic-title">Add New Compliance List</h5>
+                                <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">List Name</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">List Type</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-12">
+                                        <label for="exampleFormControlInput1" class="form-label">Select Source</label>
+                                        <input type="text"  class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-12">
+                                        <label for="exampleFormControlInput1" class="form-label">Upload Template</label>
+                                        <input type="file" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                            </div>
+                        </ng-template>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END ROW -->
+    </div>
+    <!-- container-fluid -->
+</div>

@@ -1,0 +1,75 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="page-title-box">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <h4 class="page-title">Partner Details</h4>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-right">
+                        <li class="breadcrumb-item"><a href="#">Umoja</a></li>
+                        <li class="breadcrumb-item active">Partners</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end page-title -->
+        <!-- START ROW -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <h6 class="mt-0 mb-4"><a href="/partner-details">Partner Details</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="/document">Documents</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="/assigned-countries" style="padding: 0 0 1.3em 0;
+                            border-bottom: 2px solid black;
+                            color: black;">Assigned Countries</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="/deposit">Deposit</a>
+                        </h6>
+                        <hr>
+                        <div style="display: inline;">
+                            <input type="text" class="form-control col-lg-4 mb-3" style="display: inline;" placeholder="Search..." /> 
+                            <button class="btn float-right btn-secondary" (click)="open(content)"><i class="icon-plus"></i>&nbsp;Add Country</button>
+                        </div>
+                        <div class="table-responsive">
+                            <ngx-datatable #myTx [rows]="rows" class="bootstrap" [columns]="columns">
+                                <ngx-datatable-column name="Country" prop="name"></ngx-datatable-column>
+                                <ngx-datatable-column name="Wallet Balance" prop="gender"></ngx-datatable-column>
+                                <ngx-datatable-column name="Recent Deposit" prop="company"></ngx-datatable-column>
+                                <ngx-datatable-column name="Created At" prop="company"></ngx-datatable-column>
+                                <ngx-datatable-column name="Status" prop="company"></ngx-datatable-column>
+
+                                <ngx-datatable-column name="Action">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a href="/">Edit</a>
+                                    </ng-template>
+                                </ngx-datatable-column>
+                            </ngx-datatable>
+                        </div>
+                        <ng-template #content let-c="close" let-d="dismiss">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal-basic-title">Add New Country</h5>
+                                <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="mb-3 col-12">
+                                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END ROW -->
+    </div>
+    <!-- container-fluid -->
+</div>

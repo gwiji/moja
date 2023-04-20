@@ -1,0 +1,128 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="page-title-box">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <h4 class="page-title">Countries</h4>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-right">
+                        <li class="breadcrumb-item"><a href="#">Umoja</a></li>
+                        <li class="breadcrumb-item active">Countries</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end page-title -->
+        <!-- START ROW -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        
+                        <div style="display: inline;">
+                            <input type="text" class="form-control col-lg-4 mb-3" style="display: inline;" placeholder="Search..." /> 
+                            <div class="float-right">
+                                <button class="btn float-right btn-outline-danger" (click)="open(contenti)"><i class="icon-plus"></i>&nbsp;Add to Blacklist</button>
+                                &nbsp;&nbsp;<button class="btn btn-secondary" (click)="open(content)"><i class="icon-plus"></i>&nbsp;Add Country</button>&nbsp;&nbsp;
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <ngx-datatable #myTx [rows]="rows" class="bootstrap" [columns]="columns">
+                                <ngx-datatable-column name="Country Name" prop="country"></ngx-datatable-column>
+                                <ngx-datatable-column name="Currency" prop="currency"></ngx-datatable-column>
+                                <ngx-datatable-column name="Rate" prop="rate"></ngx-datatable-column>
+                                <ngx-datatable-column name="Commission" prop="commission"></ngx-datatable-column>
+                                <ngx-datatable-column name="Tax" prop="tax"></ngx-datatable-column>
+                                <ngx-datatable-column name="Channel Limit" prop="channel"></ngx-datatable-column>
+                                <ngx-datatable-column name="Action">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a href="/">Edit</a>
+                                    </ng-template>
+                                </ngx-datatable-column>
+                            </ngx-datatable>
+                        </div>
+                        <ng-template #content let-c="close" let-d="dismiss">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal-basic-title">Add New Country</h5>
+                                <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">Country</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">Currency</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">Commission</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">Tax</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+                                </div>
+
+                                <div class="row" style="background-color: lightgray;border-radius: 0.4em;">
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">Channel</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">Limit</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                            </div>
+                        </ng-template>
+
+                        <ng-template #contenti let-c="close" let-d="dismiss">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal-basic-title">Add to Blacklist</h5>
+                                <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">Country</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+
+                                    <div class="mb-3 col-6">
+                                        <label for="exampleFormControlInput1" class="form-label">Currency</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-12">
+                                        <label for="exampleFormControlInput1" class="form-label">Reason</label>
+                                        <textarea class="form-control" id="exampleFormControlInput1" ></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END ROW -->
+    </div>
+    <!-- container-fluid -->
+</div>
